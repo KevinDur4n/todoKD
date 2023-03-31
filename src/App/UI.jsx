@@ -9,6 +9,8 @@ import { Modal } from "../components/Modal/Modal";
 import { TodoForm } from "../components/TodoForm/TodoForm";
 import { SkeletonTodoList } from "../Skeletons/SkeletonTodoList";
 import { SkeletonItemsEmpty } from "../Skeletons/SkeletonItemEmpty";
+import { FaTrashAlt } from 'react-icons/fa';
+import { ButtonDeleteAll } from "../components/ButtonDeleteAll/ButtonDeleteAll";
 function UI({ }) {
   const { error,
     loading,
@@ -34,18 +36,24 @@ function UI({ }) {
 
               <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
               <TodoList>
-                <div className="text-center text-4xl">
-                  {error && <p>Desesperate, hubo un error...</p>}
-                  {loading &&
-                    
-                    <SkeletonTodoList/>
-                  
-                  }
-                  {(!loading && searchedTodos.length < 1) &&
-                    <SkeletonItemsEmpty/>
-                   }
-                </div>
-                {
+                {error &&
+                  <div className="p-10 justify-center items-center flex flex-col">
+                    <p className=" text-sm md:text-2xl"> Ha ocurrido un error no te preocupes, limpia el cache.
+                    </p>
+                    <FaTrashAlt className="text-4xl" />
+                  </div>
+                }
+                {loading &&
+
+                  <SkeletonTodoList />
+                }
+
+                {((!loading && !error) && searchedTodos.length < 1) &&
+                  <SkeletonItemsEmpty />
+                }
+
+
+                {(!loading && !error) &&
                   searchedTodos.map(todo => (
                     <TodoItem key={todo.text} item={todo}
                       onComplete={() => completeTodo(todo.text)}
@@ -74,7 +82,7 @@ function UI({ }) {
 
         </div>
         <TodoButtonCreate setOpenModal={setOpenModal} openModal={openModal} />
-
+        <ButtonDeleteAll/>
       </React.Fragment>
 
     </>
