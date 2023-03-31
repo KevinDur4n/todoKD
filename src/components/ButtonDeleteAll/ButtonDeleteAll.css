@@ -1,0 +1,54 @@
+
+.ButtonDelete{
+    border-radius: 50%;
+    background-color: white;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin: 15px;
+    z-index: 1;
+    max-height: 80px;
+    max-width: 80px;
+    min-width: 40px;
+    min-height: 40px;
+    font-size: large;
+    font-weight:bold;
+    font-size: medium;
+   
+}
+
+
+
+.ButtonDelete:hover{
+    background-color: rgb(200, 200, 200);
+}
+
+.ButtonDelete:active{
+    background-color: black;
+    color: white;
+}
+
+.labelButtonDellete{
+    transition: all;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-out;
+    position: fixed;
+    background: white;
+    font-size: x-small;
+    width: 6rem;
+    line-height: 1rem;
+    border-radius: 0.375rem;
+    left: 2.5rem;
+    padding: 0.25rem;
+    opacity: 0;
+    color: black;
+}
+
+.ButtonDelete:hover > .labelButtonDellete {
+    cursor: default;
+    opacity: 1;
+}

@@ -1,0 +1,58 @@
+.background {
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    border-radius: 25px;
+    animation-name: preloadAnimation;
+    animation-timing-function: ease-out;
+    background: #f6f7f8;
+    background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-height: 30px;
+    padding: 10px;
+    margin: 8px;
+}
+
+@keyframes preloadAnimation {
+    0% {
+        background-position: -769px;
+    }
+
+    100% {
+        background-position: 769px;
+    }
+}
+
+
+.bar {
+    background: gainsboro;
+    position: relative;
+    border-radius: 20px;
+}
+
+
+  .bar.xsmall{
+    width: 30%;
+  }
+  .bar.medium {
+    width: 50%;
+  }
+
+  .bar.small {
+    width: 35%;
+  }
+
+  .mask {
+    background: white;
+    width: 100%;
+  }
+
+  .thick {
+    height: 1.5rem;
+  }
+
+  .thin {
+    height: 0.5rem;
+  }
