@@ -7,7 +7,7 @@ function TodoButtonCreate(props) {
     }
 
     return (
-        <button onClick={clickButton} className="ButtonCreate transition-all">+</button>
+        <button onClick={clickButton} className="ButtonCreate transition-all drop-shadow-2xl	">+</button>
     );
 }
 

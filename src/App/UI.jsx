@@ -7,6 +7,8 @@ import { TodoContext } from "../context/TodoContext";
 import { TodoButtonCreate } from "../components/TodoButtonCreate/TodoButtonCreate";
 import { Modal } from "../components/Modal/Modal";
 import { TodoForm } from "../components/TodoForm/TodoForm";
+import { SkeletonTodoList } from "../Skeletons/SkeletonTodoList";
+import { SkeletonItemsEmpty } from "../Skeletons/SkeletonItemEmpty";
 function UI({ }) {
   const { error,
     loading,
@@ -34,8 +36,14 @@ function UI({ }) {
               <TodoList>
                 <div className="text-center text-4xl">
                   {error && <p>Desesperate, hubo un error...</p>}
-                  {loading && <p>Estamos cargando, no desesperes...</p>}
-                  {(!loading && searchedTodos.length < 1) && <p>!Crea tu primer TODO!</p>}
+                  {loading &&
+                    
+                    <SkeletonTodoList/>
+                  
+                  }
+                  {(!loading && searchedTodos.length < 1) &&
+                    <SkeletonItemsEmpty/>
+                   }
                 </div>
                 {
                   searchedTodos.map(todo => (
