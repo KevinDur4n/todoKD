@@ -1,0 +1,26 @@
+
+.ButtonCreate{
+    border-radius: 50%;
+    background-color: white;
+    color: black;
+    
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 15px;
+    z-index: 1;
+    height: 80px;
+    width: 80px;
+    font-size: large;
+    font-weight:bold;
+   
+}
+
+.ButtonCreate:hover{
+    background-color: rgb(200, 200, 200);
+}
+
+.ButtonCreate:active{
+    background-color: black;
+    color: white;
+}
